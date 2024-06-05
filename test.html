@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ASCII ART WEB</title>
+    </head>
+    <body>
+        
+    <article>
+        <h1>ASCII ART WEB</h1>
+        <input type="radio" name="standard" id="rad1" value="standard">
+        <label for="rad1"> standard</label>
+        <input type="radio" name="shadow" id="rad2" value="shadow">
+        <label for="rad2"> shadow</label>
+        <input type="radio" name="thinkertoy" id="rad3" value="thinkertoy">
+        <label for="rad3"> thinkertoy</label>
+        
+        
+        
+    </article>
+    <script>
+        function textchange(e) {
+            let text = document.getElementById("title").textContent = e.target.value
+            return text
+        }
+        document.getElementById("inputtext").addEventListener("change",(e) => textchange(e))
+    </script>
+</body>
+</html>
