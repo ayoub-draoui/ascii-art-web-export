@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url(../images/bg.jpeg); */
+    /* background-color: aquamarine; */
+}
+
+.form-ascii-art{
+    
+    margin-top: 50px;
+    background-color: #d7d7d7;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    /* opacity: .3; */
+}
+
+.form-ascii-art .contains{
+    margin: 20px;
+    padding: 20px;
+   
+}
+
+.form-ascii-art .contains form div{
+    margin-bottom: 20px;
+}
+.form-ascii-art .contains form div label{
+    margin-right: 20px;
+    text-transform: capitalize;
+    
+}
+.form-ascii-art .contains form div label.text{
+    position: relative;
+    top: -20px
+}
+
+.form-ascii-art .contains form div textarea,
+.form-ascii-art .contains form div select{
+    width: 50%;
+    height: 50px;
+    border: 0;
+    outline: 0;
+    border-radius: 7px;
+    background-color: #FFF;
+
+}
+
+.form-ascii-art .contains form button{
+    width: 20%;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 7px;
+    background-color: #FFF;
+    cursor: pointer;
+    margin-left: 126px;
+}
+
+.show-ascii-art {
+    width: 100%;
+}
+.show-ascii-art .contains{
+    width: 1500px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7d7d7;
+    overflow: scroll
+}
