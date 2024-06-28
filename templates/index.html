@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ascii-art-web</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!-- Start form ascii art -->
+    <div class="form-ascii-art">
+        <div class="contains">
+            <form action="/ascii-art" method="post">
+                <div class="banners">
+                    <label for="banners">Choose banners </label>
+                    <select name="banners" id="banners">
+                        <option value="standard">Standard</option>
+                        <option value="shadow">Shadow</option>
+                        <option value="thinkertoy">Thinkertoy</option>
+                    </select>
+                </div>
+                <div class="text">
+                    <label for="text" class="text">Write Your Text</label>
+                    <textarea name="text" id="text"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -2,25 +2,51 @@
     box-sizing: border-box;
 }
 
-body{
-    /* background-image: url(../images/bg.jpeg); */
-    /* background-color: aquamarine; */
-}
-
 .form-ascii-art{
-    
-    margin-top: 50px;
     background-color: #d7d7d7;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
-    /* opacity: .3; */
 }
 
 .form-ascii-art .contains{
     margin: 20px;
     padding: 20px;
    
+}
+
+@media (max-width: 768px) {
+    .form-ascii-art {
+        max-width: 500px;
+    }
+}
+@media (max-width: 510px) {
+    .form-ascii-art {
+        max-width: 300px;
+    }
+    .form-ascii-art .contains form div {
+        margin-bottom: 40px !important;
+    }
+
+    .form-ascii-art .contains form .text label {
+        display: block;
+        margin-bottom: -17px;
+    }
+    .form-ascii-art .contains form div select,
+    .form-ascii-art .contains form div textarea {
+        width: 80% !important;
+    }
+    .form-ascii-art .contains form button{
+        width: 80% !important;
+        margin-left: auto !important;
+    }
+    .show-ascii-art button,
+    .go-back-error{
+        width: 20% !important;
+        height: 40px;
+        margin-left: 10%;
+        margin-bottom: 15px;        
+    }
 }
 
 .form-ascii-art .contains form div{
@@ -44,7 +70,6 @@ body{
     outline: 0;
     border-radius: 7px;
     background-color: #FFF;
-
 }
 
 .form-ascii-art .contains form button{
@@ -60,12 +85,29 @@ body{
 
 .show-ascii-art {
     width: 100%;
+    margin-top: 50px;
 }
 .show-ascii-art .contains{
-    width: 1500px;
+    width: 80%;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
     background-color: #d7d7d7;
     overflow: scroll
+}
+.show-ascii-art button,
+.go-back-error{
+    width: 10%;
+    height: 40px;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    background-color: #d7d7d7;
+    outline: 0;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    border-radius: 7px;
+    cursor: pointer;  
+}
+.go-back-error{
+    margin-left: 45%;
 }
