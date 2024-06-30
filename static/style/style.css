@@ -98,6 +98,7 @@
 .show-ascii-art button,
 .go-back-error{
     width: 10%;
+    min-width: 100px;
     height: 40px;
     margin-left: 10%;
     margin-bottom: 15px;
