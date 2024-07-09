@@ -5,19 +5,19 @@ import (
 	"text/template"
 )
 
-var (
-	tmpl   *template.Template
-	output string
-)
+// var (
+// 	tmpl   *template.Template
+// 	output string
+// )
 
-type Data struct {
+type ErrorResponse struct {
 	ErrNum int
 	ErrTxt string
 }
 
-func HandlerError(w http.ResponseWriter, r *http.Request, d *Data) {
+func MessageError(w http.ResponseWriter, r *http.Request, code int, msg string) {
+	msg_error := &ErrorResponse{ErrNum: code, ErrTxt: msg + "!"}
 	tmpl := template.Must(template.ParseGlob("templates/*.html"))
-
-	w.WriteHeader(d.ErrNum)
-	tmpl.ExecuteTemplate(w, "error.html", d)
+	w.WriteHeader(code)
+	tmpl.ExecuteTemplate(w, "error.html", msg_error)
 }
