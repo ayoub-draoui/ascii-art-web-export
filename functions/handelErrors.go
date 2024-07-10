@@ -5,11 +5,6 @@ import (
 	"text/template"
 )
 
-// var (
-// 	tmpl   *template.Template
-// 	output string
-// )
-
 type ErrorResponse struct {
 	ErrNum int
 	ErrTxt string

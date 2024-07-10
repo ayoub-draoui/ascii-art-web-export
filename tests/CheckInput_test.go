@@ -20,7 +20,7 @@ func TestCheckInput(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			result := functions.CheckInput(tt.text)
 			if result != tt.want {
-				t.Errorf("result value is %v but your courrect result is %v", result, tt.want)
+				t.Errorf("correct result value is %v but your result was %v", result, tt.want)
 			}
 		})
 	}
