@@ -11,8 +11,8 @@
 </head>
 <body>
     <center><h2>Error {{.ErrNum}} : {{.ErrTxt}}</h2></center>
-    <form action="/">
-        <button class="go-back-error" type="submit">Go Back</button>
-    </form>
+    <!-- <form action="/"> -->
+        <button class="go-back-error" type="submit" onclick="window.history.back()">Go Back</button>
+    <!-- </form> -->
 </body>
 </html>

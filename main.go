@@ -12,5 +12,9 @@ func main() {
 	http.HandleFunc("/ascii-art", controllers.Ascii)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	fmt.Println("http://localhost:8083")
-	http.ListenAndServe(":8083", nil)
+	err := http.ListenAndServe(":8083", nil)
+	if err != nil {
+		fmt.Println("Error Connected")
+		return
+	}
 }
