@@ -14,7 +14,7 @@ This project is an exploration of using the Golang programming language to creat
 
 ## Installing:
 ```bash
-git clone https://learn.zone01oujda.ma/git/adraoui/ascii-art-web.git
+git  https://learn.zone01oujda.ma/git/adraoui/stylize.git
 ```
 
 ## Help:
@@ -23,6 +23,6 @@ go run main.go
 ```
     
 ## Authors:
-- Ayoub Draoui
-- Ahmed Elmalki
-- Walid Zouguagh
+  - Ayoub Draoui
+  - Ahmed Elmalki
+  - Walid Zouguagh

@@ -6,17 +6,23 @@
     <title>ascii-art-web</title>
     <link rel="stylesheet" href="static/style/style.css">
     <!-- Start favIcon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon.png">
     <!-- End favIcon -->
 </head>
 <body>
-    <!-- start show ascii art -->
-    <div class="show-ascii-art">
-        <button type="submit" onclick="window.history.back()">Go Back</button>
-        <div class="contains">
-            <pre>{{.}}</pre>
+    <div class="ascii-art-result">
+        <!-- start show ascii art -->
+        <div class="show-ascii-art">
+            <button type="menu" onclick="window.history.back()">Go Back</button>
+            <form action="/export" method="post">
+                <button type="submit" >Export</button>
+                <div class="contains overflow">
+                    <pre >{{.}}</pre>
+                </div>
+            </form>
+
         </div>
+        <!-- end show ascii art -->
     </div>
-    <!-- end show ascii art -->
 </body>
 </html>

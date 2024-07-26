@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style/style.css">
     <!-- Start favIcon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon.png">
     <!-- End favIcon -->
-    <title>ERROR 404</title>
+    <title>ERROR</title>
 </head>
 <body>
-    <center><h2>Error {{.ErrNum}} : {{.ErrTxt}}</h2></center>
-    <!-- <form action="/"> -->
-        <button class="go-back-error" type="submit" onclick="window.history.back()">Go Back</button>
-    <!-- </form> -->
+    <div class="error">
+        <div class="contains overflow">
+            <center><h2>Error {{.ErrNum}} : {{.ErrTxt}}</h2></center>
+            <!-- <form action="/"> -->
+                <button class="go-back-error" type="submit" onclick="window.history.back()">Go Back</button>
+            <!-- </form> -->
+        </div>
+    </div>
 </body>
 </html>

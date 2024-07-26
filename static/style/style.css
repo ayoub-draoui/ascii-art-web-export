@@ -1,26 +1,66 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+.overflow{
+    background-color: #9e99997e;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+.ascii-art-index{
+    background-image: url(../images/bg1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 
-.form-ascii-art{
-    background-color: #d7d7d7;
-    width: 700px;
+}
+.form-ascii-art{    
+    width: 600px;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
+    /* border: 2px solid #F00; */
 }
 
 .form-ascii-art .contains{
-    margin: 20px;
     padding: 20px;
-   
 }
 
-@media (max-width: 768px) {
+@media  (max-width: 768px) {
+    .ascii-art-index{
+        background-image: url(../images/bg1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    
+    }
     .form-ascii-art {
         max-width: 500px;
     }
 }
-@media (max-width: 510px) {
+@media  (max-width: 510px) {
+    .ascii-art-index{
+        background-image: url(../images/bg1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        /* background-repeat: no-repeat; */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    
+    }
+
     .form-ascii-art {
         max-width: 300px;
     }
@@ -47,6 +87,11 @@
         margin-left: 10%;
         margin-bottom: 15px;        
     }
+    .error .contains .go-back-error{
+        margin-left: 25% !important;
+        margin-top: 20px !important;
+        width: 50% !important;
+    }
 }
 
 .form-ascii-art .contains form div{
@@ -71,6 +116,13 @@
     border-radius: 7px;
     background-color: #FFF;
 }
+.form-ascii-art .contains form div textarea{
+    /* padding-top: 4px;
+    text-indent: 5px; */
+    padding-top: 4px;
+    padding-left: 5px !important;
+
+}
 
 .form-ascii-art .contains form button{
     width: 20%;
@@ -78,22 +130,48 @@
     border: 0;
     outline: 0;
     border-radius: 7px;
+    font-size: 15px;
     background-color: #FFF;
     cursor: pointer;
     margin-left: 126px;
+    transition: .5s all;
+}
+.form-ascii-art .contains form button:hover{
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    width: 25%;
+}
+.ascii-art-result{
+    background-image: url(../images/bg2.jpg);
+    background-size: cover;
+    /* background-position: center; */
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+.ascii-art-result .overflow{
+    /* opacity: .7 !important; */
+    background-color: #FFF;
+    overflow: auto;
+}
+pre {
+    max-height: 50vh;
 }
 
 .show-ascii-art {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .show-ascii-art .contains{
     width: 80%;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #d7d7d7;
-    overflow: scroll
+    overflow: auto;
+ 
 }
 .show-ascii-art button,
 .go-back-error{
@@ -107,8 +185,52 @@
     border: 1px solid #CCC;
     border-radius: 5px;
     border-radius: 7px;
-    cursor: pointer;  
+    cursor: pointer;
+    transition: .5s all;
 }
-.go-back-error{
-    margin-left: 45%;
+
+
+.show-ascii-art button:hover{
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    width: 12%;
+}
+
+.error button:hover{
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    width: 30%;
+}
+
+.error{
+    background-image: url(../images/bgerr.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-position: center; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.error .contains{
+    margin-top: 50px;
+    border: 1px solid #EEE;
+    height: fit-content;
+    padding: 15px 50px;
+}
+.error .contains .go-back-error{
+    margin-left: 25%;
+    margin-top: 20px;
+    width: 50%;
+    opacity: 1;
+    font-weight: bold;
+}
+.error .contains .go-back-error:hover{
+    opacity: 1;
+    /* width: 60%; */
+    background-color: #000;
+    border: 1px solid #000;
+    color: #FFF;
 }

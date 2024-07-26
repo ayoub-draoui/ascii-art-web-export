@@ -3,9 +3,12 @@ package controllers
 import (
 	"html/template"
 	"net/http"
+	"strconv"
 
 	"functions/functions"
 )
+
+var dataglobal string
 
 func Ascii(w http.ResponseWriter, r *http.Request) {
 	// Retrieve form values from the HTTP request
@@ -13,6 +16,17 @@ func Ascii(w http.ResponseWriter, r *http.Request) {
 	input := r.PostFormValue("text")
 	if r.Method != "POST" {
 		functions.MessageError(w, r, http.StatusMethodNotAllowed, "Method Not Allowed") // Handle the error and return
+		return
+	}
+	// count := 0
+	// for _, char := range input {
+	// 	if char == '\r' {
+	// 		continue
+	// 	}
+	// 	count++
+	// }
+	if len(input) > 500 || len(input) == 0 {
+		functions.MessageError(w, r, http.StatusMethodNotAllowed, "Text is too long")
 		return
 	}
 
@@ -27,6 +41,9 @@ func Ascii(w http.ResponseWriter, r *http.Request) {
 	getBanner := functions.GetBanner(banner)
 	output := functions.ReadInput(input2, getBanner)
 
+	// data reload
+	dataglobal = output
+
 	// Parse the HTML template file
 	tmpl, err := template.ParseFiles("templates/ascii-art.html")
 	if err != nil {
@@ -38,6 +55,28 @@ func Ascii(w http.ResponseWriter, r *http.Request) {
 	err = tmpl.Execute(w, output)
 	if err != nil {
 		functions.MessageError(w, r, http.StatusInternalServerError, "Template execution error")
+		return
+	}
+}
+
+func ExportASCIIArt(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost && dataglobal != "" {
+
+		// Set the response headers
+		w.Header().Set("Content-Type", "text/plain")
+		w.Header().Set("Content-Disposition", "attachment; filename=ascii_art.txt")
+
+		// Set the Content-Length header
+		w.Header().Set("Content-Length", strconv.Itoa(len(dataglobal)))
+
+		// Write the ASCII art to the response
+		_, err := w.Write([]byte(dataglobal))
+		if err != nil {
+			functions.MessageError(w, r, http.StatusInternalServerError, "Template execution error")
+			return
+		}
+	} else {
+		functions.MessageError(w, r, http.StatusMethodNotAllowed, "Method Not Allowed")
 		return
 	}
 }
