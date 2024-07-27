@@ -18,14 +18,14 @@ func Ascii(w http.ResponseWriter, r *http.Request) {
 		functions.MessageError(w, r, http.StatusMethodNotAllowed, "Method Not Allowed") // Handle the error and return
 		return
 	}
-	// count := 0
-	// for _, char := range input {
-	// 	if char == '\r' {
-	// 		continue
-	// 	}
-	// 	count++
-	// }
-	if len(input) > 500 || len(input) == 0 {
+	count := 0
+	for _, char := range input {
+		if char == '\r' {
+			continue
+		}
+		count++
+	}
+	if count > 500 || count == 0 {
 		functions.MessageError(w, r, http.StatusMethodNotAllowed, "Text is too long")
 		return
 	}
